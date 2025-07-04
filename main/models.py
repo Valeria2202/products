@@ -16,7 +16,10 @@ MARK_CHOICES = (
 )
 
 class Client(models.Model):
-    pass
+    name = models.CharField(max_length=100, default="Без имени")
+
+    def __str__(self):
+        return self.name
 
 class Product(models.Model):
     objects = models.Manager()
